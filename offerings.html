@@ -24,6 +24,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         header #branding h1 {
             margin: 0;
@@ -32,6 +33,7 @@
         header .contact-info {
             text-align: right;
             padding-right: 20px;
+            flex-grow: 1;
         }
         header .contact-info p {
             margin: 5px 0;
@@ -67,6 +69,55 @@
         .contact p {
             line-height: 1.6;
         }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header #branding h1, header .contact-info {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            th, td {
+                padding: 8px;
+            }
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            th, td {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            tr {
+                margin-bottom: 15px;
+            }
+            th {
+                background: #50b3a2;
+                color: white;
+                text-align: left;
+                display: block;
+                width: calc(100% - 20px);
+                margin: 10px auto;
+                padding: 10px;
+            }
+            td {
+                text-align: left;
+                display: block;
+                width: calc(100% - 20px);
+                margin: 10px auto;
+                padding: 10px;
+            }
+            td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -76,7 +127,6 @@
         </div>
         <div class="contact-info">
             <p>Email: <a href="mailto:perf.test.consulting@gmail.com" style="color: #ffffff;">perf.test.consulting@gmail.com</a></p>
-            		
         </div>
     </header>
 
@@ -85,81 +135,67 @@
             <thead>
                 <tr>
                     <th>Service Name</th>
-					<th>For Whom the Service is Recommended</th>
-					<th>Key Features</th>
-					<th>Engagement Model</th>
+                    <th>For Whom the Service is Recommended</th>
+                    <th>Key Features</th>
+                    <th>Engagement Model</th>
                     <th>Deliverables</th>
-					<th>Benefits</th>
+                    <th>Benefits</th>
                     <th>Pricing</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Performance Testing Supervisor</td>
-					<td>Businesses launching new applications. 
-					    Organizations experiencing problems with existing performance testing processes, seeking to improve quality and efficiency of performance testing. Pre sales activities. </td>
-                    <td>Performance testing strategy, planning, execution oversight for performance test engineer(s), metrics reporting, and risk management. Knowledge transfer. </td>
-                    <td>Consulting engagement involves performance testing expert providing advisory and consultancy services to assess, optimize, and improve performance testing processes and outcomes.
-					Supervisor acts as advisor and manager for performance(automation) test engineers. Supervisor's average utilization rate is 25% of typical work day. Ongoing support. T&M. </td>
-                    <td>Enhancements to existing performance testing processes. <br>
-					    Long term performance testing strategy. <br>
-					    Recommendations for performance improvements.</td>
-                    <td>Receive strategic direction and oversight from a professional with extensive experience in performance testing.</td>
-					<td>Hourly Rate (Contact for Details)</td>
+                    <td data-label="Service Name">Performance Testing Supervisor</td>
+                    <td data-label="For Whom the Service is Recommended">Businesses launching new applications. Organizations experiencing problems with existing performance testing processes, seeking to improve quality and efficiency of performance testing. Pre-sales activities.</td>
+                    <td data-label="Key Features">Performance testing strategy, planning, execution oversight for performance test engineer(s), metrics reporting, and risk management. Knowledge transfer.</td>
+                    <td data-label="Engagement Model">Consulting engagement involves performance testing expert providing advisory and consultancy services to assess, optimize, and improve performance testing processes and outcomes. Supervisor acts as advisor and manager for performance(automation) test engineers. Supervisor's average utilization rate is 25% of typical work day. Ongoing support. T&M.</td>
+                    <td data-label="Deliverables">Enhancements to existing performance testing processes. Long term performance testing strategy. Recommendations for performance improvements.</td>
+                    <td data-label="Benefits">Receive strategic direction and oversight from a professional with extensive experience in performance testing.</td>
+                    <td data-label="Pricing">Hourly Rate (Contact for Details)</td>
                 </tr>
-				 <tr>
-                    <td>Performance Training Service</td>
-                    <td>Performance Training Service is crucial for organizations looking to maximize their IT investments, deliver superior user experiences, and maintain competitive positioning in their respective markets</td>
-                    <td>"Performance testing from zero to hero" training program, customized training programs, hands-on workshops, best practices, performance tools training, ongoing support</td>
-                    <td>Training sessions. Fixed price.</td>
-					<td>Training materials and documentation, hands-on workshop sessions, access to recorded sessions (if applicable), post-training support</td>
-                    <td>Equip team with skills to maintain and improve system performance</td>
-                    <td>Contact for Quote</td>
-                </tr>
-				<tr>
-                    <td>Performance Testing Service</td>
-					<td>Businesses launching new applications, businesses experiencing performance issues, businesses planning for peak loads</td>
-                    <td>Building performance testing process from scratch. <br>
-					Ensure applications handle expected load and beyond. 
-					Identify bottlenecks and provide actionable insights.</td>
-                    <td>Project based engagements. T&M. Fixed price.</td>
-                    <td><b>Performance Test Plan:</b> <br> Detailed document outlining the scope, objectives, approach, and timelines for performance testing activities.<br>
-					<br>
-<b>Performance Test Scenarios:</b> <br> Defined scenarios covering various aspects of application behavior under load, stress, and scalability conditions.<br>
-<br>
-<b>Test Scripts and Automation:</b> <br> Automated scripts for executing performance tests, including load scripts, stress tests, and scalability tests.<br>
-<br>
-<b>Test Execution Reports:</b><br> Comprehensive reports detailing test execution results, including metrics such as response times, throughput, and resource utilization.<br>
-<br>
-<b>Performance Analysis and Recommendations:</b> <br> Analysis of test results to identify performance bottlenecks, issues, and areas for improvement. <br>
-<br>
-<b>Presentation or Review Session(s):</b><br>
-Presentation of findings, insights, and recommendations to stakeholders.
-Discussion of performance issues, potential solutions, and next steps for performance improvement.</td>
-                    <td>By conducting performance testing, organizations can minimize risks, enhance user satisfaction, and optimize the overall performance and reliability of their applications.</td>
-                    <td>Hourly Rate or Project Based (Contact for Details)</td>
-                </tr>
-				
                 <tr>
-                    <td>Performance Audit Service</td>
-					<td>Performance Audit Service is essential for organizations aiming to enhance the performance, reliability, and scalability of their applications while meeting business objectives and user expectations effectively.</td>
-                    <td>Thorough evaluation of systems to identify bottlenecks and inefficiencies.</td>
-					<td>Project based engagements. T&M. Fixed price.</td>
-                    <td>Performance audit report, identified bottlenecks and issues, recommendations for optimization, prioritized action plan</td>
-                    <td>Engaging in a Software Performance Audit Service helps companies to systematically improve their application performance, ensuring they meet user expectations, maintain regulatory compliance, and support business growth and operational efficiency.</td>
-                    <td>Hourly Rate or Project Based (Contact for Details)</td>
+                    <td data-label="Service Name">Performance Training Service</td>
+                    <td data-label="For Whom the Service is Recommended">Organizations looking to maximize their IT investments, deliver superior user experiences, and maintain competitive positioning in their respective markets.</td>
+                    <td data-label="Key Features">"Performance testing from zero to hero" training program, customized training programs, hands-on workshops, best practices, performance tools training, ongoing support.</td>
+                    <td data-label="Engagement Model">Training sessions. Fixed price.</td>
+                    <td data-label="Deliverables">Training materials and documentation, hands-on workshop sessions, access to recorded sessions (if applicable), post-training support.</td>
+                    <td data-label="Benefits">Equip team with skills to maintain and improve system performance.</td>
+                    <td data-label="Pricing">Contact for Quote</td>
                 </tr>
-               
                 <tr>
-                    <td>Performance Monitoring and Maintenance</td>
-					<td>Businesses wanting to ensure ongoing performance, enterprises with critical uptime requirements, IT departments</td>
-                    <td>Real-time monitoring, alerting and notifications, performance dashboards, proactive issues resolution</td>
-                    <td>Project based engagements. T&M. Fixed price.</td>
-                    <td>Monitoring setup and configuration, performance dashboards, regular maintenance reports, issue resolution documentation</td>
-                    <td>By proactively managing performance, organizations can avoid costly disruptions, optimize their IT investments, and achieve their business objectives more effectively.</td>
-                    <td>Hourly Rate or Project Based (Contact for Details)</td>
+                    <td data-label="Service Name">Performance Testing Service</td>
+                    <td data-label="For Whom the Service is Recommended">Businesses launching new applications, businesses experiencing performance issues, businesses planning for peak loads.</td>
+                    <td data-label="Key Features">Building performance testing process from scratch. Ensure applications handle expected load and beyond. Identify bottlenecks and provide actionable insights.</td>
+                    <td data-label="Engagement Model">Project based engagements. T&M. Fixed price.</td>
+                    <td data-label="Deliverables">
+                        <b>Performance Test Plan:</b> Detailed document outlining the scope, objectives, approach, and timelines for performance testing activities.<br>
+                        <b>Performance Test Scenarios:</b> Defined scenarios covering various aspects of application behavior under load, stress, and scalability conditions.<br>
+                        <b>Test Scripts and Automation:</b> Automated scripts for executing performance tests, including load scripts, stress tests, and scalability tests.<br>
+                        <b>Test Execution Reports:</b> Comprehensive reports detailing test execution results, including metrics such as response times, throughput, and resource utilization.<br>
+                        <b>Performance Analysis and Recommendations:</b> Analysis of test results to identify performance bottlenecks, issues, and areas for improvement.<br>
+                        <b>Presentation or Review Session(s):</b> Presentation of findings, insights, and recommendations to stakeholders. Discussion of performance issues, potential solutions, and next steps for performance improvement.
+                    </td>
+                    <td data-label="Benefits">Minimize risks, enhance user satisfaction, and optimize the overall performance and reliability of applications.</td>
+                    <td data-label="Pricing">Hourly Rate or Project Based (Contact for Details)</td>
                 </tr>
-               
+                <tr>
+                    <td data-label="Service Name">Performance Audit Service</td>
+                    <td data-label="For Whom the Service is Recommended">Organizations aiming to enhance the performance, reliability, and scalability of their applications while meeting business objectives and user expectations effectively.</td>
+                    <td data-label="Key Features">Thorough evaluation of systems to identify bottlenecks and inefficiencies.</td>
+                    <td data-label="Engagement Model">Project based engagements. T&M. Fixed price.</td>
+                    <td data-label="Deliverables">Performance audit report, identified bottlenecks and issues, recommendations for optimization, prioritized action plan.</td>
+                    <td data-label="Benefits">Systematically improve application performance, ensuring they meet user expectations, maintain regulatory compliance, and support business growth and operational efficiency.</td>
+                    <td data-label="Pricing">Hourly Rate or Project Based (Contact for Details)</td>
+                </tr>
+                <tr>
+                    <td data-label="Service Name">Performance Monitoring and Maintenance</td>
+                    <td data-label="For Whom the Service is Recommended">Businesses wanting to ensure ongoing performance, enterprises with critical uptime requirements, IT departments.</td>
+                    <td data-label="Key Features">Real-time monitoring, alerting and notifications, performance dashboards, proactive issues resolution.</td>
+                    <td data-label="Engagement Model">Project based engagements. T&M. Fixed price.</td>
+                    <td data-label="Deliverables">Monitoring setup and configuration, performance dashboards, regular maintenance reports, issue resolution documentation.</td>
+                    <td data-label="Benefits">Avoid costly disruptions, optimize IT investments, and achieve business objectives more effectively.</td>
+                    <td data-label="Pricing">Hourly Rate or Project Based (Contact for Details)</td>
+                </tr>
             </tbody>
         </table>
     </div>
